@@ -1,0 +1,9 @@
+{{ define "main" }}
+
+  {{ range ( where site.RegularPages "Section" "posts" | first 1 ) }}
+
+{{ partial "single.html" . }}
+
+  {{ end }}
+
+{{ end }}

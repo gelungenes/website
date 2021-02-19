@@ -1,0 +1,7 @@
+baseURL = "https://gelungen.es"
+languageCode = "de-de"
+title = "Gelungenes"
+theme = "gelungenes"
+
+[permalinks]
+  posts = "/:year-:month-:day"

@@ -1,0 +1,40 @@
+  <header>
+
+      <h1><a href="/">Gelungenes <span>Die Kunst des schönen Satzes</span></a></h1>
+
+{{/*
+
+  <p id="meta">gefunden am 09.12.2014 auf <a href="http://fcb-erlebniswelt.de/de/ausstellung/praesidiumszimmer/" rel="external">http://<span class="secret">fcb-erlebniswelt.de/</span>…</a></p>
+
+
+*/}}
+
+  </header>
+
+  <main>
+    <section id="content">
+    <blockquote id="quote" cite="http://fcb-erlebniswelt.de/de/ausstellung/praesidiumszimmer/">
+
+      <p>{{ .Title }}</p>
+
+    </blockquote>
+
+    <time {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+      <span class="wd">{{ .Date.Format "Mon" }},</span>
+      <span class="d">{{ .Date.Day }}.</span>
+      <span class="m">{{ .Date.Format "Jan" }}.</span>
+    </time>
+    </section>
+
+    <nav>
+
+    {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}" class="prev" title="Vorheriger Satz"><span>‹<span></a>
+    {{ end }}
+
+    {{ with .NextInSection }}
+        <a href="{{ .Permalink }}" class="next" title="Nächster Satz"><span>›<span></a>
+    {{ end }}
+    </nav>
+
+  </main>

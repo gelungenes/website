@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="canonical" href="{{ .Permalink }}">
+        <meta name="twitter:site" content="@gelungenes">
+
+<link rel="feed" type="application/rss+xml" href="/index.xml" title="{{ $.Site.Title | safeHTML }}">
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="{{ $.Site.Title | safeHTML }}">
+
+    {{- template "_internal/opengraph.html" . -}}
+    {{- template "_internal/schema.html" . -}}
+    {{- template "_internal/twitter_cards.html" . -}}
+
+  {{ with resources.GetMatch "/css/gelungenes.css" }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}" >
+  {{ end }}
+        </head>
+    <body>
+
+      {{- block "main" . }}{{- end }}
+
+  <footer>
+
+    <p id="colophon">… wieder mal <a href="//izmmwd.de" class="izmmwd">izmmwd</a>. <a href="//izmmwd.de/impressum.html" class="imprint">Impressum</a></p>
+
+    <section id="social">
+
+      <ul>
+        <li id="feed"><a href="/index.xml"><span>RSS</span></a></li>
+      </ul>
+
+    </section>
+
+  </footer>
+
+    {{ with resources.GetMatch "/js/*.js" }}
+    <script src="{{ .RelPermalink }}"></script>
+    {{ end }}
+
+    </body>
+</html>
