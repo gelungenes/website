@@ -1,11 +1,12 @@
 {{ $found_url := urls.Parse .Params.found_url }}
+{{ $found_at := time .Params.found_at }}
 
 
   <header>
 
       <h1><a href="/">Gelungenes <span>Die Kunst des schönen Satzes</span></a></h1>
 
-      <p id="meta">gefunden am {{ .Params.found_at }} auf <a href="{{ .Params.found_url }}" rel="external">{{ replace $found_url.Host "www." "" }}</a></p>
+      <p id="meta">gefunden am {{ printf "%02d" $found_at.Day }}.{{ printf "%02d" $found_at.Month }}.{{ $found_at.Year }} auf <a href="{{ .Params.found_url }}" rel="external">{{ replace $found_url.Host "www." "" }}</a></p>
 
   </header>
 
