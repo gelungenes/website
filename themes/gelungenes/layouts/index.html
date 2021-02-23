@@ -2,7 +2,7 @@
 
   {{ range ( where site.RegularPages "Section" "posts" | first 1 ) }}
 
-{{ partial "single.html" . }}
+{{ partial "main.html" . }}
 
   {{ end }}
 
