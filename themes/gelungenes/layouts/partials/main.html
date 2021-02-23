@@ -1,19 +1,17 @@
+{{ $found_url := urls.Parse .Params.found_url }}
+
+
   <header>
 
       <h1><a href="/">Gelungenes <span>Die Kunst des schönen Satzes</span></a></h1>
 
-{{/*
-
-  <p id="meta">gefunden am 09.12.2014 auf <a href="http://fcb-erlebniswelt.de/de/ausstellung/praesidiumszimmer/" rel="external">http://<span class="secret">fcb-erlebniswelt.de/</span>…</a></p>
-
-
-*/}}
+      <p id="meta">gefunden am {{ .Params.found_at }} auf <a href="{{ .Params.found_url }}" rel="external">{{ replace $found_url.Host "www." "" }}</a></p>
 
   </header>
 
   <main>
     <section id="content">
-    <blockquote id="quote" cite="http://fcb-erlebniswelt.de/de/ausstellung/praesidiumszimmer/">
+    <blockquote id="quote" cite="{{ .Params.found_url }}">
 
       <p>{{ .Title }}</p>
 
