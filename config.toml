@@ -1,6 +1,6 @@
 baseURL = "https://gelungen.es"
 languageCode = "de-de"
-title = "Gelungenes"
+title = "Gelungenes - Die Kunst des schönen Satzes"
 theme = "gelungenes"
 
 [permalinks]
