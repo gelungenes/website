@@ -14,3 +14,11 @@ services:
     working_dir: /app
     volumes:
       - ./:/app
+
+  im:
+    build:
+      context: .
+      dockerfile: Dockerfile.imagemagick
+    working_dir: /app
+    volumes:
+      - ./:/app
