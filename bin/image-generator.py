@@ -2,7 +2,8 @@ import frontmatter
 import datetime
 from urllib.parse import urlparse
 
-date = "2021-02-24"
+now = datetime.datetime.utcnow().replace(tzinfo=datetime.timezone.utc)
+date = now.strftime("%Y-%m-%d")
 
 with open("content/posts/%s.md" % date) as f:
     post = frontmatter.load(f)
