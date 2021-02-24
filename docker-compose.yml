@@ -10,7 +10,9 @@ services:
       - 127.0.0.1:1313:1313
 
   util:
-    image: python:3.9.2-alpine3.13
+    build:
+      context: .
+      dockerfile: Dockerfile.util
     working_dir: /app
     volumes:
       - ./:/app
