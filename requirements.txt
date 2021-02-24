@@ -1,3 +1,4 @@
 python-frontmatter==0.5.0
 PyYAML==5.4.1
 six==1.15.0
+twitter==1.18.0
