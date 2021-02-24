@@ -8,7 +8,8 @@ date = now.strftime("%Y-%m-%d")
 with open("content/posts/%s.md" % date) as f:
     post = frontmatter.load(f)
 
-print(f"""
+with open("/tmp/image-generator.sh", 'w') as file_object:
+    file_object.write(f"""
 #!/bin/sh
 time convert \
     -interline-spacing -20 \
