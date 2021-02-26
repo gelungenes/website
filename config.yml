@@ -6,3 +6,6 @@ publishDir: "docs"
 
 permalinks:
   posts: "/:year-:month-:day"
+
+Social:
+  twitter: gelungenes
