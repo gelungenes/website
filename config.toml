@@ -1,8 +1,0 @@
-baseURL = "https://gelungen.es"
-languageCode = "de-de"
-title = "Gelungenes - Die Kunst des schönen Satzes"
-theme = "gelungenes"
-publishDir = "docs"
-
-[permalinks]
-  posts = "/:year-:month-:day"
