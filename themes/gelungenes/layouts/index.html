@@ -1,3 +1,9 @@
+{{ define "head" }}
+{{ range ( where site.RegularPages "Section" "posts" | first 1 ) }}
+{{ partial "head.html" . }}
+{{ end }}
+{{ end }}
+
 {{ define "main" }}
 
   {{ range ( where site.RegularPages "Section" "posts" | first 1 ) }}
