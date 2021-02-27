@@ -1,9 +1,19 @@
 {{ template "_internal/opengraph.html" . }}
 {{ template "_internal/schema.html" . }}
-{{ template "_internal/twitter_cards.html" . }}
 
 {{ $image := printf `images/%s.png` (.Date.Format "2006-01-02") }}
 {{ if (fileExists (printf `static/%s` $image)) -}}
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="{{ $image | absURL }}"/>
 {{- end }}
+
+<meta name="twitter:title" content="{{ .Title }}"/>
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end -}}"/>
+{{ with .Site.Social.twitter -}}
+<meta name="twitter:site" content="@{{ . }}"/>
+{{ end -}}
+{{ range .Site.Authors }}
+{{ with .twitter -}}
+<meta name="twitter:creator" content="@{{ . }}"/>
+{{ end -}}
+{{ end -}}
