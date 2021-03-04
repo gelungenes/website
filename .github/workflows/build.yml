@@ -16,8 +16,8 @@ jobs:
       run: |
         docker-compose -f docker-compose.yml run util python ./bin/random-pick.py
         tmp_file=$(mktemp)
-        docker-compose -f docker-compose.yml run --volume $tmp_file:/tmp/image-generator.sh util python ./bin/image-generator.py
-        docker-compose -f docker-compose.yml run --volume $tmp_file:/tmp/image-generator.sh im ash /tmp/image-generator.sh
+        docker-compose -f docker-compose.yml run --volume $tmp_file:/tmp/image-generator.sh util ash -c 'chown root: /tmp/image-generator.sh && python ./bin/image-generator.py'
+        docker-compose -f docker-compose.yml run --volume $tmp_file:/tmp/image-generator.sh im ash -c 'chown root: /tmp/image-generator.sh && /tmp/image-generator.sh'
         docker-compose -f docker-compose.yml run util python ./bin/tweet.py
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
