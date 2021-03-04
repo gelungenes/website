@@ -13,6 +13,6 @@ jobs:
         chmod 777 $tmp_file
         ls -lsa $tmp_file
         docker-compose -f docker-compose.yml run --volume $tmp_file:/tmp/image-generator.sh util ls -lsa /tmp
-        docker-compose -f docker-compose.yml run --volume $tmp_file:/tmp/image-generator.sh util python ./bin/image-generator.py
+        docker-compose -f docker-compose.yml run --volume $tmp_file:/tmp/image-generator.sh util ash -c 'chown root: /tmp/image-generator.sh && python ./bin/image-generator.py'
         docker-compose -f docker-compose.yml run --volume $tmp_file:/tmp/image-generator.sh im ls -lsa /tmp
-        docker-compose -f docker-compose.yml run --volume $tmp_file:/tmp/image-generator.sh im ash /tmp/image-generator.sh
+        docker-compose -f docker-compose.yml run --volume $tmp_file:/tmp/image-generator.sh im ash -c 'chown root: /tmp/image-generator.sh && /tmp/image-generator.sh'
