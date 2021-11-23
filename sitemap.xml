@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://gelungen.es/2021-11-22/</loc>
-    <lastmod>2021-11-22T10:09:04+00:00</lastmod>
+    <loc>https://gelungen.es/</loc>
+    <lastmod>2021-11-23T10:09:06+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://gelungen.es/</loc>
-    <lastmod>2021-11-22T10:09:04+00:00</lastmod>
+    <loc>https://gelungen.es/2021-11-23/</loc>
+    <lastmod>2021-11-23T10:09:06+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://gelungen.es/posts/</loc>
+    <lastmod>2021-11-23T10:09:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://gelungen.es/2021-11-22/</loc>
     <lastmod>2021-11-22T10:09:04+00:00</lastmod>
   </url>
   
